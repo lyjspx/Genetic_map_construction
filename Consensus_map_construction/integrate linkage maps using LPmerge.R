@@ -1,0 +1,1005 @@
+## define working directory
+#setwd("/Users/xuehui.li/Desktop/XL/research/crops/durum_wheat/p2_Integrated genetic linkage map in tetraploid wheat/linkage map/integrated/durum_consensusMap_GBS-90K-SSR")
+
+
+getwd()
+setwd("Y:/Yuan/durum_consensusMap_GBS-90K-SSR/RawMapFile")
+
+## load RIum linkage map data
+RIum=read.delim("RIumNA50_JM_kosambi.txt", header=T)
+dim(RIum)
+RIum[1:5,]
+
+RIumLG1A=RIum[RIum[,2]=="1A",3:4]
+RIumLG1B=RIum[RIum[,2]=="1B",3:4]
+RIumLG2A=RIum[RIum[,2]=="2A",3:4]
+RIumLG2B=RIum[RIum[,2]=="2B",3:4]
+RIumLG3A=RIum[RIum[,2]=="3A",3:4]
+RIumLG3B=RIum[RIum[,2]=="3B",3:4]
+RIumLG4A=RIum[RIum[,2]=="4A",3:4]
+RIumLG4B=RIum[RIum[,2]=="4B",3:4]
+RIumLG5A=RIum[RIum[,2]=="5A",3:4]
+RIumLG5B=RIum[RIum[,2]=="5B",3:4]
+RIumLG6A=RIum[RIum[,2]=="6A",3:4]
+RIumLG6B=RIum[RIum[,2]=="6B",3:4]
+RIumLG7A=RIum[RIum[,2]=="7A",3:4]
+RIumLG7B=RIum[RIum[,2]=="7B",3:4]
+
+## load RP883 linkage map data
+RP883=read.delim("RP883NA50_GBS_90K_JM_kosambi.txt", header=T)
+dim(RP883)
+RP883[1:5,]
+
+RP883LG1A=RP883[RP883[,2]=="1A",3:4]
+RP883LG1B=RP883[RP883[,2]=="1B",3:4]
+RP883LG2A=RP883[RP883[,2]=="2A",3:4]
+RP883LG2B=RP883[RP883[,2]=="2B",3:4]
+RP883LG3A=RP883[RP883[,2]=="3A",3:4]
+RP883LG3B=RP883[RP883[,2]=="3B",3:4]
+RP883LG4A=RP883[RP883[,2]=="4A",3:4]
+RP883LG4B=RP883[RP883[,2]=="4B",3:4]
+RP883LG5A=RP883[RP883[,2]=="5A",3:4]
+RP883LG5B=RP883[RP883[,2]=="5B",3:4]
+RP883LG6A=RP883[RP883[,2]=="6A",3:4]
+RP883LG6B=RP883[RP883[,2]=="6B",3:4]
+RP883LG7A=RP883[RP883[,2]=="7A",3:4]
+RP883LG7B=RP883[RP883[,2]=="7B",3:4]
+
+
+## load RP979 linkage map data
+RP979=read.delim("RP979NA50_JM_kosambi.txt", header=T)
+dim(RP979)
+RP979[1:5,]
+
+RP979LG1A=RP979[RP979[,2]=="1A",3:4]
+RP979LG1B=RP979[RP979[,2]=="1B",3:4]
+RP979LG2A=RP979[RP979[,2]=="2A",3:4]
+RP979LG2B=RP979[RP979[,2]=="2B",3:4]
+RP979LG3A=RP979[RP979[,2]=="3A",3:4]
+RP979LG3B=RP979[RP979[,2]=="3B",3:4]
+RP979LG4A=RP979[RP979[,2]=="4A",3:4]
+RP979LG4B=RP979[RP979[,2]=="4B",3:4]
+RP979LG5A=RP979[RP979[,2]=="5A",3:4]
+RP979LG5B=RP979[RP979[,2]=="5B",3:4]
+RP979LG6A=RP979[RP979[,2]=="6A",3:4]
+RP979LG6B=RP979[RP979[,2]=="6B",3:4]
+RP979LG7A=RP979[RP979[,2]=="7A",3:4]
+RP979LG7B=RP979[RP979[,2]=="7B",3:4]
+
+
+## load RP336 linkage map data
+RP336=read.delim("RP336NA50_JM_kosambi.txt", header=T)
+dim(RP336)
+RP336[1:5,]
+
+RP336LG1A=RP336[RP336[,2]=="1A",3:4]
+RP336LG1B=RP336[RP336[,2]=="1B",3:4]
+RP336LG2A=RP336[RP336[,2]=="2A",3:4]
+RP336LG2B=RP336[RP336[,2]=="2B",3:4]
+RP336LG3A=RP336[RP336[,2]=="3A",3:4]
+RP336LG3B=RP336[RP336[,2]=="3B",3:4]
+RP336LG4A=RP336[RP336[,2]=="4A",3:4]
+RP336LG4B=RP336[RP336[,2]=="4B",3:4]
+RP336LG5A=RP336[RP336[,2]=="5A",3:4]
+RP336LG5B=RP336[RP336[,2]=="5B",3:4]
+RP336LG6A=RP336[RP336[,2]=="6A",3:4]
+RP336LG6B=RP336[RP336[,2]=="6B",3:4]
+RP336LG7A=RP336[RP336[,2]=="7A",3:4]
+RP336LG7B=RP336[RP336[,2]=="7B",3:4]
+
+
+## load RP696 linkage map data
+RP696=read.delim("RP696NA50_JM_kosambi.txt", header=T)
+dim(RP696)
+RP696[1:5,]
+
+RP696LG1A=RP696[RP696[,2]=="1A",3:4]
+RP696LG1B=RP696[RP696[,2]=="1B",3:4]
+RP696LG2A=RP696[RP696[,2]=="2A",3:4]
+RP696LG2B1=RP696[RP696[,2]=="2B1",3:4]
+RP696LG2B2=RP696[RP696[,2]=="2B2",3:4]
+RP696LG3A=RP696[RP696[,2]=="3A",3:4]
+RP696LG3B=RP696[RP696[,2]=="3B",3:4]
+RP696LG4A=RP696[RP696[,2]=="4A",3:4]
+RP696LG4B=RP696[RP696[,2]=="4B",3:4]
+RP696LG5A=RP696[RP696[,2]=="5A",3:4]
+RP696LG5B=RP696[RP696[,2]=="5B",3:4]
+RP696LG6A=RP696[RP696[,2]=="6A",3:4]
+RP696LG6B=RP696[RP696[,2]=="6B",3:4]
+RP696LG7A=RP696[RP696[,2]=="7A",3:4]
+RP696LG7B=RP696[RP696[,2]=="7B",3:4]
+
+## load BP025 linkage map data
+BP025=read.delim("BP025_9K_GBS.txt", header=T)
+dim(BP025)
+BP025[1:5,]
+
+BP025LG1A=BP025[BP025[,2]=="1A",3:4]
+BP025LG1B=BP025[BP025[,2]=="1B",3:4]
+BP025LG2A=BP025[BP025[,2]=="2A",3:4]
+BP025LG2B=BP025[BP025[,2]=="2B",3:4]
+BP025LG3A=BP025[BP025[,2]=="3A",3:4]
+BP025LG3B=BP025[BP025[,2]=="3B",3:4]
+BP025LG4A=BP025[BP025[,2]=="4A",3:4]
+BP025LG4B=BP025[BP025[,2]=="4B",3:4]
+BP025LG5A=BP025[BP025[,2]=="5A",3:4]
+BP025LG5B=BP025[BP025[,2]=="5B",3:4]
+BP025LG6A=BP025[BP025[,2]=="6A",3:4]
+BP025LG6B=BP025[BP025[,2]=="6B",3:4]
+BP025LG7A=BP025[BP025[,2]=="7A",3:4]
+BP025LG7B=BP025[BP025[,2]=="7B",3:4]
+
+## load DP527 linkage map data
+DP527=read.delim("DP527_GBS_90K.txt", header=T)
+dim(DP527)
+DP527[1:5,]
+
+DP527LG1A=DP527[DP527[,2]=="1A",3:4]
+DP527LG1B=DP527[DP527[,2]=="1B",3:4]
+DP527LG2A=DP527[DP527[,2]=="2A",3:4]
+DP527LG2B=DP527[DP527[,2]=="2B",3:4]
+DP527LG3A=DP527[DP527[,2]=="3A",3:4]
+DP527LG3B=DP527[DP527[,2]=="3B",3:4]
+DP527LG4A=DP527[DP527[,2]=="4A",3:4]
+DP527LG4B=DP527[DP527[,2]=="4B",3:4]
+DP527LG5A=DP527[DP527[,2]=="5A",3:4]
+DP527LG5B=DP527[DP527[,2]=="5B",3:4]
+DP527LG6A=DP527[DP527[,2]=="6A",3:4]
+DP527LG6B=DP527[DP527[,2]=="6B",3:4]
+DP527LG7A=DP527[DP527[,2]=="7A",3:4]
+DP527LG7B=DP527[DP527[,2]=="7B",3:4]
+
+## load LP749 linkage map data
+LP749=read.delim("LP749_Dr.Xu.txt", header=T)
+dim(LP749)
+LP749[1:5,]
+
+LP749LG1A=LP749[LP749[,2]=="1A",3:4]
+LP749LG1B=LP749[LP749[,2]=="1B",3:4]
+LP749LG2A=LP749[LP749[,2]=="2A",3:4]
+LP749LG2B=LP749[LP749[,2]=="2B",3:4]
+LP749LG3A=LP749[LP749[,2]=="3A",3:4]
+LP749LG3B=LP749[LP749[,2]=="3B",3:4]
+LP749LG4A=LP749[LP749[,2]=="4A",3:4]
+LP749LG4B=LP749[LP749[,2]=="4B",3:4]
+LP749LG5A=LP749[LP749[,2]=="5A",3:4]
+LP749LG5B=LP749[LP749[,2]=="5B",3:4]
+LP749LG6A=LP749[LP749[,2]=="6A",3:4]
+LP749LG6B=LP749[LP749[,2]=="6B",3:4]
+LP749LG7A=LP749[LP749[,2]=="7A",3:4]
+LP749LG7B=LP749[LP749[,2]=="7B",3:4]
+
+## load Joppa10 linkage map data
+Joppa10 = read.delim("Joppa10_GBS_90K_YL_2019.txt",header = T)
+dim(Joppa10)
+Joppa10[1:5,]
+
+Joppa10LG1A=Joppa10[Joppa10[,2]=="1A",3:4]
+Joppa10LG1B=Joppa10[Joppa10[,2]=="1B",3:4]
+Joppa10LG2A=Joppa10[Joppa10[,2]=="2A",3:4]
+Joppa10LG2B=Joppa10[Joppa10[,2]=="2B",3:4]
+Joppa10LG3A=Joppa10[Joppa10[,2]=="3A",3:4]
+Joppa10LG3B=Joppa10[Joppa10[,2]=="3B",3:4]
+Joppa10LG4A=Joppa10[Joppa10[,2]=="4A",3:4]
+Joppa10LG4B=Joppa10[Joppa10[,2]=="4B",3:4]
+Joppa10LG5A=Joppa10[Joppa10[,2]=="5A",3:4]
+Joppa10LG5B=Joppa10[Joppa10[,2]=="5B",3:4]
+Joppa10LG6A=Joppa10[Joppa10[,2]=="6A",3:4]
+Joppa10LG6B=Joppa10[Joppa10[,2]=="6B",3:4]
+Joppa10LG7A=Joppa10[Joppa10[,2]=="7A",3:4]
+Joppa10LG7B=Joppa10[Joppa10[,2]=="7B",3:4]
+
+
+
+## load LPenawawa linkage map data
+LPenawawa=read.delim("LouisePenawawa_Dr.Liu_AABB.txt", header=T)
+dim(LPenawawa)
+LPenawawa[1:5,]
+
+LPenawawaLG1A=LPenawawa[LPenawawa[,2]=="1A",3:4]
+LPenawawaLG1B=LPenawawa[LPenawawa[,2]=="1B",3:4]
+LPenawawaLG2A=LPenawawa[LPenawawa[,2]=="2A",3:4]
+LPenawawaLG2B=LPenawawa[LPenawawa[,2]=="2B",3:4]
+LPenawawaLG3A=LPenawawa[LPenawawa[,2]=="3A",3:4]
+LPenawawaLG3B=LPenawawa[LPenawawa[,2]=="3B",3:4]
+LPenawawaLG4A=LPenawawa[LPenawawa[,2]=="4A",3:4]
+LPenawawaLG4B=LPenawawa[LPenawawa[,2]=="4B",3:4]
+LPenawawaLG5A=LPenawawa[LPenawawa[,2]=="5A",3:4]
+LPenawawaLG5B=LPenawawa[LPenawawa[,2]=="5B",3:4]
+LPenawawaLG6A=LPenawawa[LPenawawa[,2]=="6A",3:4]
+LPenawawaLG6B=LPenawawa[LPenawawa[,2]=="6B",3:4]
+LPenawawaLG7A=LPenawawa[LPenawawa[,2]=="7A",3:4]
+LPenawawaLG7B=LPenawawa[LPenawawa[,2]=="7B",3:4]
+LPenawawaLG1D=LPenawawa[LPenawawa[,2]=="1D",3:4]
+LPenawawaLG2D=LPenawawa[LPenawawa[,2]=="2D",3:4]
+LPenawawaLG3D=LPenawawa[LPenawawa[,2]=="3D",3:4]
+LPenawawaLG4D=LPenawawa[LPenawawa[,2]=="4D",3:4]
+LPenawawaLG5D=LPenawawa[LPenawawa[,2]=="5D",3:4]
+LPenawawaLG6D=LPenawawa[LPenawawa[,2]=="6D",3:4]
+LPenawawaLG7D=LPenawawa[LPenawawa[,2]=="7D",3:4]
+
+
+
+##load Langdon Altar linkage map data
+LDNAltar=read.delim("LDNAltar.txt",header = T)
+dim(LDNAltar)
+LDNAltar[1:5,]
+
+LDNAltarLG1A=LDNAltar[LDNAltar[,2]=="1A",3:4]
+LDNAltarLG1B=LDNAltar[LDNAltar[,2]=="1B",3:4]
+LDNAltarLG2A=LDNAltar[LDNAltar[,2]=="2A",3:4]
+LDNAltarLG2B=LDNAltar[LDNAltar[,2]=="2B",3:4]
+LDNAltarLG3A=LDNAltar[LDNAltar[,2]=="3A",3:4]
+LDNAltarLG3B=LDNAltar[LDNAltar[,2]=="3B",3:4]
+LDNAltarLG4A=LDNAltar[LDNAltar[,2]=="4A",3:4]
+LDNAltarLG4B=LDNAltar[LDNAltar[,2]=="4B",3:4]
+LDNAltarLG5A=LDNAltar[LDNAltar[,2]=="5A",3:4]
+LDNAltarLG5B=LDNAltar[LDNAltar[,2]=="5B",3:4]
+LDNAltarLG6A=LDNAltar[LDNAltar[,2]=="6A",3:4]
+LDNAltarLG6B=LDNAltar[LDNAltar[,2]=="6B",3:4]
+LDNAltarLG7A=LDNAltar[LDNAltar[,2]=="7A",3:4]
+LDNAltarLG7B=LDNAltar[LDNAltar[,2]=="7B",3:4]
+
+##load TA415260 ND495 linkage map data
+TAND495=read.delim("TA415ND495.txt",header = T)
+dim(TAND495)
+
+TAND495LG1A=TAND495[TAND495[,2]=="1A",3:4]
+TAND495LG1B=TAND495[TAND495[,2]=="1B",3:4]
+TAND495LG2A=TAND495[TAND495[,2]=="2A",3:4]
+TAND495LG2B=TAND495[TAND495[,2]=="2B",3:4]
+TAND495LG3A=TAND495[TAND495[,2]=="3A",3:4]
+TAND495LG3B=TAND495[TAND495[,2]=="3B",3:4]
+TAND495LG4A=TAND495[TAND495[,2]=="4A",3:4]
+TAND495LG4B=TAND495[TAND495[,2]=="4B",3:4]
+TAND495LG5A=TAND495[TAND495[,2]=="5A",3:4]
+TAND495LG5B=TAND495[TAND495[,2]=="5B",3:4]
+TAND495LG6A=TAND495[TAND495[,2]=="6A",3:4]
+TAND495LG6B=TAND495[TAND495[,2]=="6B",3:4]
+TAND495LG7A=TAND495[TAND495[,2]=="7A",3:4]
+TAND495LG7B=TAND495[TAND495[,2]=="7B",3:4]
+TAND495LG1D=TAND495[TAND495[,2]=="1D",3:4]
+TAND495LG2D=TAND495[TAND495[,2]=="2D",3:4]
+TAND495LG3D=TAND495[TAND495[,2]=="3D",3:4]
+TAND495LG4D=TAND495[TAND495[,2]=="4D",3:4]
+TAND495LG5D=TAND495[TAND495[,2]=="5D",3:4]
+TAND495LG6D=TAND495[TAND495[,2]=="6D",3:4]
+TAND495LG7D=TAND495[TAND495[,2]=="7D",3:4]
+
+##load BR34 Grandin linkage map data
+
+BR34=read.delim("BG.txt",header = T)
+dim(BR34)
+BR34LG1A=BR34[BR34[,2]=="1A",3:4]
+BR34LG1B=BR34[BR34[,2]=="1B",3:4]
+BR34LG2A=BR34[BR34[,2]=="2A",3:4]
+BR34LG2B=BR34[BR34[,2]=="2B",3:4]
+BR34LG3A=BR34[BR34[,2]=="3A",3:4]
+BR34LG3B=BR34[BR34[,2]=="3B",3:4]
+BR34LG4A=BR34[BR34[,2]=="4A",3:4]
+BR34LG4B=BR34[BR34[,2]=="4B",3:4]
+BR34LG5A=BR34[BR34[,2]=="5A",3:4]
+BR34LG5B=BR34[BR34[,2]=="5B",3:4]
+BR34LG6A=BR34[BR34[,2]=="6A",3:4]
+BR34LG6B=BR34[BR34[,2]=="6B",3:4]
+BR34LG7A=BR34[BR34[,2]=="7A",3:4]
+BR34LG7B=BR34[BR34[,2]=="7B",3:4]
+BR34LG1D=BR34[BR34[,2]=="1D",3:4]
+BR34LG2D=BR34[BR34[,2]=="2D",3:4]
+BR34LG3D=BR34[BR34[,2]=="3D",3:4]
+BR34LG4D=BR34[BR34[,2]=="4D",3:4]
+BR34LG5D=BR34[BR34[,2]=="5D",3:4]
+BR34LG6D=BR34[BR34[,2]=="6D",3:4]
+BR34LG7D=BR34[BR34[,2]=="7D",3:4]
+##load Salamouni Katepwa linkage map data
+SalKat=read.delim("SalKat.txt",header = T)
+dim(SalKat)
+SalKatLG1A=SalKat[SalKat[,2]=="1A",3:4]
+SalKatLG1B=SalKat[SalKat[,2]=="1B",3:4]
+SalKatLG2A=SalKat[SalKat[,2]=="2A",3:4]
+SalKatLG2B=SalKat[SalKat[,2]=="2B",3:4]
+SalKatLG3A=SalKat[SalKat[,2]=="3A",3:4]
+SalKatLG3B=SalKat[SalKat[,2]=="3B",3:4]
+SalKatLG4A=SalKat[SalKat[,2]=="4A",3:4]
+SalKatLG4B=SalKat[SalKat[,2]=="4B",3:4]
+SalKatLG5A=SalKat[SalKat[,2]=="5A",3:4]
+SalKatLG5B=SalKat[SalKat[,2]=="5B",3:4]
+SalKatLG6A=SalKat[SalKat[,2]=="6A",3:4]
+SalKatLG6B=SalKat[SalKat[,2]=="6B",3:4]
+SalKatLG7A=SalKat[SalKat[,2]=="7A",3:4]
+SalKatLG7B=SalKat[SalKat[,2]=="7B",3:4]
+SalKatLG1D=SalKat[SalKat[,2]=="1D",3:4]
+SalKatLG2D=SalKat[SalKat[,2]=="2D",3:4]
+SalKatLG3D=SalKat[SalKat[,2]=="3D",3:4]
+SalKatLG4D=SalKat[SalKat[,2]=="4D",3:4]
+SalKatLG5D=SalKat[SalKat[,2]=="5D",3:4]
+SalKatLG6D=SalKat[SalKat[,2]=="6D",3:4]
+SalKatLG7D=SalKat[SalKat[,2]=="7D",3:4]
+##load LMPG-6 PI626573 linkage map data
+LMPGPI=read.delim("LMPGPI.txt",header = T)
+dim(LMPGPI)
+LMPGPILG1A=LMPGPI[LMPGPI[,2]=="1A",3:4]
+LMPGPILG1B=LMPGPI[LMPGPI[,2]=="1B",3:4]
+LMPGPILG2A=LMPGPI[LMPGPI[,2]=="2A",3:4]
+LMPGPILG2B=LMPGPI[LMPGPI[,2]=="2B",3:4]
+LMPGPILG3A=LMPGPI[LMPGPI[,2]=="3A",3:4]
+LMPGPILG3B=LMPGPI[LMPGPI[,2]=="3B",3:4]
+LMPGPILG4A=LMPGPI[LMPGPI[,2]=="4A",3:4]
+LMPGPILG4B=LMPGPI[LMPGPI[,2]=="4B",3:4]
+LMPGPILG5A=LMPGPI[LMPGPI[,2]=="5A",3:4]
+LMPGPILG5B=LMPGPI[LMPGPI[,2]=="5B",3:4]
+LMPGPILG6A=LMPGPI[LMPGPI[,2]=="6A",3:4]
+LMPGPILG6B=LMPGPI[LMPGPI[,2]=="6B",3:4]
+LMPGPILG7A=LMPGPI[LMPGPI[,2]=="7A",3:4]
+LMPGPILG7B=LMPGPI[LMPGPI[,2]=="7B",3:4]
+LMPGPILG1D=LMPGPI[LMPGPI[,2]=="1D",3:4]
+LMPGPILG2D=LMPGPI[LMPGPI[,2]=="2D",3:4]
+LMPGPILG3D=LMPGPI[LMPGPI[,2]=="3D",3:4]
+LMPGPILG4D=LMPGPI[LMPGPI[,2]=="4D",3:4]
+LMPGPILG5D=LMPGPI[LMPGPI[,2]=="5D",3:4]
+LMPGPILG6D=LMPGPI[LMPGPI[,2]=="6D",3:4]
+LMPGPILG7D=LMPGPI[LMPGPI[,2]=="7D",3:4]
+
+
+consensus2004SSR=read.delim("2004 paper map SSR consensus.txt",header = T)
+consensus2004SSRLG1A=consensus2004SSR[consensus2004SSR[,2]=="1A",3:4]
+consensus2004SSRLG1B=consensus2004SSR[consensus2004SSR[,2]=="1B",3:4]
+consensus2004SSRLG2A=consensus2004SSR[consensus2004SSR[,2]=="2A",3:4]
+consensus2004SSRLG2B=consensus2004SSR[consensus2004SSR[,2]=="2B",3:4]
+consensus2004SSRLG3A=consensus2004SSR[consensus2004SSR[,2]=="3A",3:4]
+consensus2004SSRLG3B=consensus2004SSR[consensus2004SSR[,2]=="3B",3:4]
+consensus2004SSRLG4A=consensus2004SSR[consensus2004SSR[,2]=="4A",3:4]
+consensus2004SSRLG4B=consensus2004SSR[consensus2004SSR[,2]=="4B",3:4]
+consensus2004SSRLG5A=consensus2004SSR[consensus2004SSR[,2]=="5A",3:4]
+consensus2004SSRLG5B=consensus2004SSR[consensus2004SSR[,2]=="5B",3:4]
+consensus2004SSRLG6A=consensus2004SSR[consensus2004SSR[,2]=="6A",3:4]
+consensus2004SSRLG6B=consensus2004SSR[consensus2004SSR[,2]=="6B",3:4]
+consensus2004SSRLG7A=consensus2004SSR[consensus2004SSR[,2]=="7A",3:4]
+consensus2004SSRLG7B=consensus2004SSR[consensus2004SSR[,2]=="7B",3:4]
+consensus2004SSRLG1D=consensus2004SSR[consensus2004SSR[,2]=="1D",3:4]
+consensus2004SSRLG2D=consensus2004SSR[consensus2004SSR[,2]=="2D",3:4]
+consensus2004SSRLG3D=consensus2004SSR[consensus2004SSR[,2]=="3D",3:4]
+consensus2004SSRLG4D=consensus2004SSR[consensus2004SSR[,2]=="4D",3:4]
+consensus2004SSRLG5D=consensus2004SSR[consensus2004SSR[,2]=="5D",3:4]
+consensus2004SSRLG6D=consensus2004SSR[consensus2004SSR[,2]=="6D",3:4]
+consensus2004SSRLG7D=consensus2004SSR[consensus2004SSR[,2]=="7D",3:4]
+
+
+# consensus2008DarT=read.delim("2008 paper map.txt",header = T)
+# consensus2008DarTLG1A=consensus2008DarT[consensus2008DarT[,2]=="1A",3:4]
+# consensus2008DarTLG1B=consensus2008DarT[consensus2008DarT[,2]=="1B",3:4]
+# consensus2008DarTLG2A=consensus2008DarT[consensus2008DarT[,2]=="2A",3:4]
+# consensus2008DarTLG2B=consensus2008DarT[consensus2008DarT[,2]=="2B",3:4]
+# consensus2008DarTLG3A=consensus2008DarT[consensus2008DarT[,2]=="3A",3:4]
+# consensus2008DarTLG3B=consensus2008DarT[consensus2008DarT[,2]=="3B",3:4]
+# consensus2008DarTLG4A=consensus2008DarT[consensus2008DarT[,2]=="4A",3:4]
+# consensus2008DarTLG4B=consensus2008DarT[consensus2008DarT[,2]=="4B",3:4]
+# consensus2008DarTLG5A=consensus2008DarT[consensus2008DarT[,2]=="5A",3:4]
+# consensus2008DarTLG5B=consensus2008DarT[consensus2008DarT[,2]=="5B",3:4]
+# consensus2008DarTLG6A=consensus2008DarT[consensus2008DarT[,2]=="6A",3:4]
+# consensus2008DarTLG6B=consensus2008DarT[consensus2008DarT[,2]=="6B",3:4]
+# consensus2008DarTLG7A=consensus2008DarT[consensus2008DarT[,2]=="7A",3:4]
+# consensus2008DarTLG7B=consensus2008DarT[consensus2008DarT[,2]=="7B",3:4]
+
+#####################
+EB=read.delim("EB_Li_2010.txt",header = T)
+EBLG1A1=EB[EB[,2]=="1A1",3:4]
+EBLG1A2=EB[EB[,2]=="1A2",3:4]
+EBLG1B1=EB[EB[,2]=="1B1",3:4]
+EBLG1B2=EB[EB[,2]=="1B2",3:4]
+EBLG1B3=EB[EB[,2]=="1B3",3:4]
+EBLG2A1=EB[EB[,2]=="2A1",3:4]
+EBLG2A2=EB[EB[,2]=="2A2",3:4]
+EBLG2A3=EB[EB[,2]=="2A3",3:4]
+EBLG2A4=EB[EB[,2]=="2A4",3:4]
+EBLG2B1=EB[EB[,2]=="2B1",3:4]
+EBLG2B2=EB[EB[,2]=="2B2",3:4]
+EBLG2B3=EB[EB[,2]=="2B3",3:4]
+EBLG3A1=EB[EB[,2]=="3A1",3:4]
+EBLG3A2=EB[EB[,2]=="3A2",3:4]
+EBLG3A3=EB[EB[,2]=="3A3",3:4]
+EBLG3B=EB[EB[,2]=="3B",3:4]
+EBLG4A1=EB[EB[,2]=="4A1",3:4]
+EBLG4A2=EB[EB[,2]=="4A2",3:4]
+EBLG4A3=EB[EB[,2]=="4A3",3:4]
+EBLG4B1=EB[EB[,2]=="4B1",3:4]
+EBLG4B2=EB[EB[,2]=="4B2",3:4]
+EBLG4B3=EB[EB[,2]=="4B3",3:4]
+EBLG5A1=EB[EB[,2]=="5A1",3:4]
+EBLG5A2=EB[EB[,2]=="5A2",3:4]
+EBLG5A3=EB[EB[,2]=="5A3",3:4]
+EBLG5A4=EB[EB[,2]=="5A4",3:4]
+EBLG5B=EB[EB[,2]=="5B",3:4]
+EBLG6A1=EB[EB[,2]=="6A1",3:4]
+EBLG6A2=EB[EB[,2]=="6A2",3:4]
+EBLG6B1=EB[EB[,2]=="6B1",3:4]
+EBLG6B2=EB[EB[,2]=="6B2",3:4]
+EBLG7A1=EB[EB[,2]=="7A1",3:4]
+EBLG7A2=EB[EB[,2]=="7A2",3:4]
+EBLG7A3=EB[EB[,2]=="7A3",3:4]
+EBLG7B1=EB[EB[,2]=="7B1",3:4]
+EBLG7B2=EB[EB[,2]=="7B2",3:4]
+EBLG7B3=EB[EB[,2]=="7B3",3:4]
+EBLG1D=EB[EB[,2]=="1D",3:4]
+EBLG2D1=EB[EB[,2]=="2D1",3:4]
+EBLG2D2=EB[EB[,2]=="2D2",3:4]
+EBLG3D1=EB[EB[,2]=="3D1",3:4]
+EBLG3D2=EB[EB[,2]=="3D2",3:4]
+EBLG4D1=EB[EB[,2]=="4D1",3:4]
+EBLG4D2=EB[EB[,2]=="4D2",3:4]
+EBLG5D1=EB[EB[,2]=="5D1",3:4]
+EBLG5D2=EB[EB[,2]=="5D2",3:4]
+EBLG6D1=EB[EB[,2]=="6D1",3:4]
+EBLG6D2=EB[EB[,2]=="6D2",3:4]
+EBLG7D1=EB[EB[,2]=="7D1",3:4]
+EBLG7D2=EB[EB[,2]=="7D2",3:4]
+EBLG7D3=EB[EB[,2]=="7D3",3:4]
+
+######
+AC=read.delim("AC_2017.txt",header = T)
+dim(AC)
+ACLG1A1=AC[AC[,2]=="1A1",3:4]
+ACLG1A2=AC[AC[,2]=="1A2",3:4]
+ACLG1B1=AC[AC[,2]=="1B1",3:4]
+ACLG1B2=AC[AC[,2]=="1B2",3:4]
+ACLG2A=AC[AC[,2]=="2A",3:4]
+ACLG2B=AC[AC[,2]=="2B",3:4]
+ACLG3A1=AC[AC[,2]=="3A1",3:4]
+ACLG3A2=AC[AC[,2]=="3A2",3:4]
+ACLG3B=AC[AC[,2]=="3B",3:4]
+ACLG4A1=AC[AC[,2]=="4A1",3:4]
+ACLG4A2=AC[AC[,2]=="4A2",3:4]
+ACLG4B=AC[AC[,2]=="4B",3:4]
+ACLG5A=AC[AC[,2]=="5A",3:4]
+ACLG5B=AC[AC[,2]=="5B",3:4]
+ACLG6A=AC[AC[,2]=="6A",3:4]
+ACLG6B1=AC[AC[,2]=="6B1",3:4]
+ACLG6B2=AC[AC[,2]=="6B2",3:4]
+ACLG7A1=AC[AC[,2]=="7A1",3:4]
+ACLG7A2=AC[AC[,2]=="7A2",3:4]
+ACLG7B=AC[AC[,2]=="7B",3:4]
+ACLG1D=AC[AC[,2]=="1D",3:4]
+ACLG2D1=AC[AC[,2]=="2D1",3:4]
+ACLG2D2=AC[AC[,2]=="2D2",3:4]
+ACLG3D=AC[AC[,2]=="3D",3:4]
+ACLG4D=AC[AC[,2]=="4D",3:4]
+ACLG5D=AC[AC[,2]=="5D",3:4]
+ACLG6D1=AC[AC[,2]=="6D1",3:4]
+ACLG6D2=AC[AC[,2]=="6D2",3:4]
+ACLG7D=AC[AC[,2]=="7D",3:4]
+
+########################
+CW=read.delim("CW_2017.txt",header = T)
+dim(CW)
+CWLG1A1=CW[CW[,2]=="1A1",3:4]
+CWLG1A2=CW[CW[,2]=="1A2",3:4]
+CWLG1B1=CW[CW[,2]=="1B1",3:4]
+CWLG1B2=CW[CW[,2]=="1B2",3:4]
+CWLG2A1=CW[CW[,2]=="2A1",3:4]
+CWLG2A2=CW[CW[,2]=="2A2",3:4]
+CWLG2B1=CW[CW[,2]=="2B1",3:4]
+CWLG2B2=CW[CW[,2]=="2B2",3:4]
+CWLG3A1=CW[CW[,2]=="3A1",3:4]
+CWLG3A2=CW[CW[,2]=="3A2",3:4]
+CWLG3B=CW[CW[,2]=="3B",3:4]
+CWLG4A=CW[CW[,2]=="4A",3:4]
+CWLG4B=CW[CW[,2]=="4B",3:4]
+CWLG5A=CW[CW[,2]=="5A",3:4]
+CWLG5B=CW[CW[,2]=="5B",3:4]
+CWLG6A=CW[CW[,2]=="6A",3:4]
+CWLG6B=CW[CW[,2]=="6B",3:4]
+CWLG7A1=CW[CW[,2]=="7A1",3:4]
+CWLG7A2=CW[CW[,2]=="7A2",3:4]
+CWLG7B=CW[CW[,2]=="7B",3:4]
+CWLG1D=CW[CW[,2]=="1D",3:4]
+CWLG2D1=CW[CW[,2]=="2D1",3:4]
+CWLG2D2=CW[CW[,2]=="2D2",3:4]
+CWLG3D1=CW[CW[,2]=="3D1",3:4]
+CWLG3D2=CW[CW[,2]=="3D2",3:4]
+CWLG4D=CW[CW[,2]=="4D",3:4]
+CWLG5D=CW[CW[,2]=="5D",3:4]
+CWLG6D=CW[CW[,2]=="6D",3:4]
+CWLG7D=CW[CW[,2]=="7D",3:4]
+
+#########################
+IA=read.delim("IA_2017.txt",header = T)
+dim(IA)
+IALG1A=IA[IA[,2]=="1A",3:4]
+IALG1B=IA[IA[,2]=="1B",3:4]
+IALG2A=IA[IA[,2]=="2A",3:4]
+IALG2B=IA[IA[,2]=="2B",3:4]
+IALG3A1=IA[IA[,2]=="3A1",3:4]
+IALG3A2=IA[IA[,2]=="3A2",3:4]
+IALG3B1=IA[IA[,2]=="3B1",3:4]
+IALG3B2=IA[IA[,2]=="3B2",3:4]
+IALG3B3=IA[IA[,2]=="3B3",3:4]
+IALG4A1=IA[IA[,2]=="4A1",3:4]
+IALG4A2=IA[IA[,2]=="4A2",3:4]
+IALG4B1=IA[IA[,2]=="4B1",3:4]
+IALG4B2=IA[IA[,2]=="4B2",3:4]
+IALG5A1=IA[IA[,2]=="5A1",3:4]
+IALG5A2=IA[IA[,2]=="5A2",3:4]
+IALG5B1=IA[IA[,2]=="5B1",3:4]
+IALG5B2=IA[IA[,2]=="5B2",3:4]
+IALG6A=IA[IA[,2]=="6A",3:4]
+IALG6B1=IA[IA[,2]=="6B1",3:4]
+IALG6B2=IA[IA[,2]=="6B2",3:4]
+IALG7A1=IA[IA[,2]=="7A1",3:4]
+IALG7A2=IA[IA[,2]=="7A2",3:4]
+IALG7B1=IA[IA[,2]=="7B1",3:4]
+IALG7B2=IA[IA[,2]=="7B2",3:4]
+IALG1D=IA[IA[,2]=="1D",3:4]
+IALG2D1=IA[IA[,2]=="2D1",3:4]
+IALG2D2=IA[IA[,2]=="2D2",3:4]
+IALG3D=IA[IA[,2]=="3D",3:4]
+IALG4D=IA[IA[,2]=="4D",3:4]
+IALG5D=IA[IA[,2]=="5D",3:4]
+IALG6D=IA[IA[,2]=="6D",3:4]
+IALG7D=IA[IA[,2]=="7D",3:4]
+
+########################
+TT105=read.delim("TT105.txt",header = T)
+dim(TT105)
+TT105LG1A=TT105[TT105[,2]=="1A",3:4]
+TT105LG1B=TT105[TT105[,2]=="1B",3:4]
+TT105LG2A=TT105[TT105[,2]=="2A",3:4]
+TT105LG2B=TT105[TT105[,2]=="2B",3:4]
+TT105LG3A=TT105[TT105[,2]=="3A",3:4]
+TT105LG3B=TT105[TT105[,2]=="3B",3:4]
+TT105LG4A=TT105[TT105[,2]=="4A",3:4]
+TT105LG4B=TT105[TT105[,2]=="4B",3:4]
+TT105LG5A=TT105[TT105[,2]=="5A",3:4]
+TT105LG5B=TT105[TT105[,2]=="5B",3:4]
+TT105LG6A=TT105[TT105[,2]=="6A",3:4]
+TT105LG6B=TT105[TT105[,2]=="6B",3:4]
+TT105LG7A=TT105[TT105[,2]=="7A",3:4]
+TT105LG7B=TT105[TT105[,2]=="7B",3:4]
+TT105LG1D=TT105[TT105[,2]=="1D",3:4]
+TT105LG2D=TT105[TT105[,2]=="2D",3:4]
+TT105LG3D=TT105[TT105[,2]=="3D",3:4]
+TT105LG4D=TT105[TT105[,2]=="4D",3:4]
+TT105LG5D=TT105[TT105[,2]=="5D",3:4]
+TT105LG6D=TT105[TT105[,2]=="6D",3:4]
+TT105LG7D=TT105[TT105[,2]=="7D",3:4]
+
+##########################
+
+Consensus2012TAG=read.delim("Consensus2012TAG.txt",header = T)
+dim(Consensus2012TAG)
+Consensus2012TAGLG1A1=Consensus2012TAG[Consensus2012TAG[,2]=="1A1",3:4]
+Consensus2012TAGLG1A2=Consensus2012TAG[Consensus2012TAG[,2]=="1A2",3:4]
+Consensus2012TAGLG1A3=Consensus2012TAG[Consensus2012TAG[,2]=="1A3",3:4]
+Consensus2012TAGLG1B=Consensus2012TAG[Consensus2012TAG[,2]=="1B",3:4]
+Consensus2012TAGLG2A1=Consensus2012TAG[Consensus2012TAG[,2]=="2A1",3:4]
+Consensus2012TAGLG2A2=Consensus2012TAG[Consensus2012TAG[,2]=="2A2",3:4]
+Consensus2012TAGLG2A3=Consensus2012TAG[Consensus2012TAG[,2]=="2A3",3:4]
+Consensus2012TAGLG2B=Consensus2012TAG[Consensus2012TAG[,2]=="2B",3:4]
+Consensus2012TAGLG3A1=Consensus2012TAG[Consensus2012TAG[,2]=="3A1",3:4]
+Consensus2012TAGLG3A2=Consensus2012TAG[Consensus2012TAG[,2]=="3A2",3:4]
+Consensus2012TAGLG3A3=Consensus2012TAG[Consensus2012TAG[,2]=="3A3",3:4]
+Consensus2012TAGLG3B1=Consensus2012TAG[Consensus2012TAG[,2]=="3B1",3:4]
+Consensus2012TAGLG3B2=Consensus2012TAG[Consensus2012TAG[,2]=="3B2",3:4]
+Consensus2012TAGLG4A=Consensus2012TAG[Consensus2012TAG[,2]=="4A",3:4]
+Consensus2012TAGLG4B1=Consensus2012TAG[Consensus2012TAG[,2]=="4B1",3:4]
+Consensus2012TAGLG4B2=Consensus2012TAG[Consensus2012TAG[,2]=="4B2",3:4]
+Consensus2012TAGLG5A=Consensus2012TAG[Consensus2012TAG[,2]=="5A1",3:4]
+Consensus2012TAGLG5A=Consensus2012TAG[Consensus2012TAG[,2]=="5A2",3:4]
+Consensus2012TAGLG5B1=Consensus2012TAG[Consensus2012TAG[,2]=="5B1",3:4]
+Consensus2012TAGLG5B2=Consensus2012TAG[Consensus2012TAG[,2]=="5B2",3:4]
+Consensus2012TAGLG5B3=Consensus2012TAG[Consensus2012TAG[,2]=="5B3",3:4]
+Consensus2012TAGLG6A=Consensus2012TAG[Consensus2012TAG[,2]=="6A",3:4]
+Consensus2012TAGLG6B=Consensus2012TAG[Consensus2012TAG[,2]=="6B",3:4]
+Consensus2012TAGLG7A1=Consensus2012TAG[Consensus2012TAG[,2]=="7A1",3:4]
+Consensus2012TAGLG7A2=Consensus2012TAG[Consensus2012TAG[,2]=="7A2",3:4]
+Consensus2012TAGLG7A3=Consensus2012TAG[Consensus2012TAG[,2]=="7A3",3:4]
+Consensus2012TAGLG7B=Consensus2012TAG[Consensus2012TAG[,2]=="7B",3:4]
+
+#######
+Consensus2014BMC=read.delim("Consensus2014_BMC.txt",header = T)
+dim(Consensus2014BMC)
+Consensus2014BMCLG1A1=Consensus2014BMC[Consensus2014BMC[,2]=="1A1",3:4]
+Consensus2014BMCLG1A2=Consensus2014BMC[Consensus2014BMC[,2]=="1A2",3:4]
+Consensus2014BMCLG1B=Consensus2014BMC[Consensus2014BMC[,2]=="1B",3:4]
+Consensus2014BMCLG2A1=Consensus2014BMC[Consensus2014BMC[,2]=="2A1",3:4]
+Consensus2014BMCLG2A2=Consensus2014BMC[Consensus2014BMC[,2]=="2A2",3:4]
+Consensus2014BMCLG2B=Consensus2014BMC[Consensus2014BMC[,2]=="2B",3:4]
+Consensus2014BMCLG3A1=Consensus2014BMC[Consensus2014BMC[,2]=="3A1",3:4]
+Consensus2014BMCLG3A2=Consensus2014BMC[Consensus2014BMC[,2]=="3A2",3:4]
+Consensus2014BMCLG3B=Consensus2014BMC[Consensus2014BMC[,2]=="3B",3:4]
+Consensus2014BMCLG4A=Consensus2014BMC[Consensus2014BMC[,2]=="4A",3:4]
+Consensus2014BMCLG4B=Consensus2014BMC[Consensus2014BMC[,2]=="4B",3:4]
+Consensus2014BMCLG5A=Consensus2014BMC[Consensus2014BMC[,2]=="5A",3:4]
+Consensus2014BMCLG5B=Consensus2014BMC[Consensus2014BMC[,2]=="5B",3:4]
+Consensus2014BMCLG6A=Consensus2014BMC[Consensus2014BMC[,2]=="6A",3:4]
+Consensus2014BMCLG6B=Consensus2014BMC[Consensus2014BMC[,2]=="6B",3:4]
+Consensus2014BMCLG7A=Consensus2014BMC[Consensus2014BMC[,2]=="7A",3:4]
+Consensus2014BMCLG7B=Consensus2014BMC[Consensus2014BMC[,2]=="7B",3:4]
+
+##########################
+BMW=read.delim("BMW_population.txt",header = T)
+BMWLG1A=BMW[BMW[,2]=="1A",3:4]
+BMWLG1B=BMW[BMW[,2]=="1B",3:4]
+BMWLG2A=BMW[BMW[,2]=="2A",3:4]
+BMWLG2B=BMW[BMW[,2]=="2B",3:4]
+BMWLG3A=BMW[BMW[,2]=="3A",3:4]
+BMWLG3B=BMW[BMW[,2]=="3B",3:4]
+BMWLG4A=BMW[BMW[,2]=="4A",3:4]
+BMWLG4B=BMW[BMW[,2]=="4B",3:4]
+BMWLG5A=BMW[BMW[,2]=="5A",3:4]
+BMWLG5B=BMW[BMW[,2]=="5B",3:4]
+BMWLG6A=BMW[BMW[,2]=="6A",3:4]
+BMWLG6B=BMW[BMW[,2]=="6B",3:4]
+BMWLG7A=BMW[BMW[,2]=="7A",3:4]
+BMWLG7B=BMW[BMW[,2]=="7B",3:4]
+BMWLG1D=BMW[BMW[,2]=="1D",3:4]
+BMWLG2D=BMW[BMW[,2]=="2D",3:4]
+BMWLG3D=BMW[BMW[,2]=="3D",3:4]
+BMWLG4D=BMW[BMW[,2]=="4D",3:4]
+BMWLG5D=BMW[BMW[,2]=="5D",3:4]
+BMWLG6D=BMW[BMW[,2]=="6D",3:4]
+BMWLG7D=BMW[BMW[,2]=="7D",3:4]
+
+
+##########################
+library("LPmerge")
+
+#####divert output
+sink("Y:/Yuan/durum_consensusMap_GBS-90K-SSR/sink_output1.txt",type = c("output", "message")) 
+
+
+## merge maps
+LG1A=list(RIumLG1A, RP883LG1A, RP979LG1A, RP336LG1A, RP696LG1A, BP025LG1A, DP527LG1A, LP749LG1A,
+          LDNAltarLG1A,BR34LG1A,TAND495LG1A,SalKatLG1A,LMPGPILG1A,consensus2004SSRLG1A,Joppa10LG1A
+          ,IALG1A,EBLG1A1,EBLG1A2,ACLG1A1,ACLG1A2,CWLG1A1,CWLG1A2,Consensus2012TAGLG1A1,
+          Consensus2012TAGLG1A2,Consensus2012TAGLG1A3,Consensus2014BMCLG1A1,
+          Consensus2014BMCLG1A2,LPenawawaLG1A,TT105LG1A,BMWLG1A)
+LG1A.int=LPmerge(LG1A, max.interval=1:6)
+header=paste(",,,RIumLG1A, RP883LG1A, RP979LG1A, RP336LG1A, RP696LG1A, BP025LG1A, DP527LG1A, LP749LG1A,",
+             "LDNAltarLG1A,BR34LG1A,TAND495LG1A,SalKatLG1A,LMPGPILG1A,consensus2004SSRLG1A,Joppa10LG1A",
+             ",IALG1A,EBLG1A1,EBLG1A2,ACLG1A1,ACLG1A2,CWLG1A1,CWLG1A2,Consensus2012TAGLG1A1,",
+             "Consensus2012TAGLG1A2,Consensus2012TAGLG1A3,Consensus2014BMCLG1A1,",
+             "Consensus2014BMCLG1A2,LPenawawaLG1A,TT105LG1A,BMWLG1A",sep = "")
+write(header,file = "LG1A.int.csv")
+#LG1A.int[[6]][1:20,]
+write.table(LG1A.int[[1]], file="LG1A.int.csv",append = TRUE,sep = ",")
+
+
+LG1B=list(RIumLG1B, RP883LG1B, RP979LG1B, RP336LG1B, RP696LG1B, BP025LG1B, DP527LG1B, LP749LG1B,
+          LDNAltarLG1B,BR34LG1B,TAND495LG1B,SalKatLG1B,LMPGPILG1B,consensus2004SSRLG1B,
+          Joppa10LG1B,IALG1B, Consensus2012TAGLG1B, Consensus2014BMCLG1B,EBLG1B1,ACLG1B1,CWLG1B1,
+          EBLG1B2, ACLG1B2, CWLG1B2, EBLG1B3,LPenawawaLG1B,TT105LG1B,BMWLG1B)
+LG1B.int=LPmerge(LG1B, max.interval=1:6)
+#LG1B.int[[4]][1:20,]
+header=paste(",,,RIumLG1B, RP883LG1B, RP979LG1B, RP336LG1B, RP696LG1B, BP025LG1B, DP527LG1B, LP749LG1B,",
+             "LDNAltarLG1B,BR34LG1B,TAND495LG1B,SalKatLG1B,LMPGPILG1B,consensus2004SSRLG1B,",
+             "Joppa10LG1B,IALG1B, Consensus2012TAGLG1B, Consensus2014BMCLG1B,EBLG1B1,ACLG1B1,CWLG1B1,",
+             "EBLG1B2, ACLG1B2, CWLG1B2, EBLG1B3,LPenawawaLG1B,TT105LG1B,BMWLG1B",sep = "")
+write(header,file = "LG1B.int.csv")
+write.table(LG1B.int[[4]],  file="LG1B.int.csv",append = TRUE,sep = ",")
+
+
+LG2A=list(RIumLG2A, RP883LG2A, RP979LG2A, RP336LG2A, RP696LG2A, BP025LG2A, DP527LG2A, LP749LG2A,
+          LDNAltarLG2A,BR34LG2A,TAND495LG2A,SalKatLG2A,LMPGPILG2A,consensus2004SSRLG2A,
+          Joppa10LG2A,ACLG2A,Consensus2012TAGLG2A1,Consensus2012TAGLG2A2,Consensus2012TAGLG2A3,
+          Consensus2014BMCLG2A1,Consensus2014BMCLG2A2,
+          CWLG2A1,CWLG2A2,
+          EBLG2A1,EBLG2A2,EBLG2A3,EBLG2A4,
+          IALG2A,LPenawawaLG2A,TT105LG2A,BMWLG2A)
+LG2A.int=LPmerge(LG2A, max.interval=1:3)
+header=paste(",,,RIumLG2A, RP883LG2A, RP979LG2A, RP336LG2A, RP696LG2A, BP025LG2A, DP527LG2A, LP749LG2A,",
+             "LDNAltarLG2A,BR34LG2A,TAND495LG2A,SalKatLG2A,LMPGPILG2A,consensus2004SSRLG2A,",
+             "Joppa10LG2A,ACLG2A,Consensus2012TAGLG2A1,Consensus2012TAGLG2A2,Consensus2012TAGLG2A3,",
+             "Consensus2014BMCLG2A1,Consensus2014BMCLG2A2,CWLG2A1,CWLG2A2,EBLG2A1,EBLG2A2,EBLG2A3,EBLG2A4,",
+             "IALG2A,LPenawawaLG2A,TT105LG2A,BMWLG2A",sep = "")
+write(header,file = "LG2A.int.csv")
+write.table(LG2A.int[[3]],  file="LG2A.int.csv",append = TRUE,sep = ",")
+
+
+LG2B=list(RIumLG2B, RP883LG2B, RP979LG2B, RP336LG2B, RP696LG2B1, RP696LG2B2, BP025LG2B, DP527LG2B, LP749LG2B,
+          LDNAltarLG2B,BR34LG2B,TAND495LG2B,SalKatLG2B,LMPGPILG2B,consensus2004SSRLG2B,
+          Joppa10LG2B,ACLG2B,Consensus2012TAGLG2B,Consensus2014BMCLG2B,
+          CWLG2B1,CWLG2B2,EBLG2B1,EBLG2B2,EBLG2B3,IALG2B,LPenawawaLG2B,TT105LG2B,BMWLG2B)
+LG2B.int=LPmerge(LG2B, max.interval=1:6)
+header=paste(",,,RIumLG2B, RP883LG2B, RP979LG2B, RP336LG2B, RP696LG2B1, RP696LG2B2, BP025LG2B, DP527LG2B, LP749LG2B,",
+             "LDNAltarLG2B,BR34LG2B,TAND495LG2B,SalKatLG2B,LMPGPILG2B,consensus2004SSRLG2B,",
+             "Joppa10LG2B,ACLG2B,Consensus2012TAGLG2B,Consensus2014BMCLG2B,",
+             "CWLG2B1,CWLG2B2,EBLG2B1,EBLG2B2,EBLG2B3,IALG2B,LPenawawaLG2B,TT105LG2B,BMWLG2B",sep = "")
+write(header,file = "LG2B.int.csv")
+write.table(LG2B.int[[2]],  file="LG2B.int.csv",append = TRUE,sep = ",")
+
+LG3A=list(RIumLG3A, RP883LG3A, RP979LG3A, RP336LG3A, RP696LG3A, BP025LG3A, DP527LG3A, LP749LG3A,
+          LDNAltarLG3A,BR34LG3A,TAND495LG3A,SalKatLG3A,LMPGPILG3A,consensus2004SSRLG3A,
+          Joppa10LG3A,ACLG3A1,ACLG3A2,
+          Consensus2012TAGLG3A1,Consensus2012TAGLG3A2,Consensus2012TAGLG3A3,
+          Consensus2014BMCLG3A1,Consensus2014BMCLG3A2,
+          CWLG3A1,CWLG3A2,EBLG3A1,EBLG3A2,EBLG3A3,IALG3A1,IALG3A2,LPenawawaLG3A,TT105LG3A,BMWLG3A)
+LG3A.int=LPmerge(LG3A, max.interval=1:2)
+header=paste(",,,RIumLG3A, RP883LG3A, RP979LG3A, RP336LG3A, RP696LG3A, BP025LG3A, DP527LG3A, LP749LG3A,",
+             "LDNAltarLG3A,BR34LG3A,TAND495LG3A,SalKatLG3A,LMPGPILG3A,consensus2004SSRLG3A,",
+             "Joppa10LG3A,ACLG3A1,ACLG3A2,",
+             "Consensus2012TAGLG3A1,Consensus2012TAGLG3A2,Consensus2012TAGLG3A3,",
+             "Consensus2014BMCLG3A1,Consensus2014BMCLG3A2,",
+             "CWLG3A1,CWLG3A2,EBLG3A1,EBLG3A2,EBLG3A3,IALG3A1,IALG3A2,LPenawawaLG3A,TT105LG3A,BMWLG3A",sep = "")
+write(header,file = "LG3A.int.csv")
+write.table(LG3A.int[[1]],  file="LG3A.int.csv",append = TRUE,sep = ",")
+
+LG3B=list(RIumLG3B, RP883LG3B, RP979LG3B, RP336LG3B, RP696LG3B, BP025LG3B, DP527LG3B, LP749LG3B,
+          LDNAltarLG3B,BR34LG3B,TAND495LG3B,SalKatLG3B,LMPGPILG3B,consensus2004SSRLG3B,
+          Joppa10LG3B,ACLG3B,Consensus2012TAGLG3B1,Consensus2012TAGLG3B2,
+          Consensus2014BMCLG3B,CWLG3B,EBLG3B,IALG3B1,IALG3B2,IALG3B3,LPenawawaLG3B,TT105LG3B,BMWLG3B)
+LG3B.int=LPmerge(LG3B, max.interval=1:3)
+header=paste(",,,RIumLG3B, RP883LG3B, RP979LG3B, RP336LG3B, RP696LG3B, BP025LG3B, DP527LG3B, LP749LG3B,",
+             "LDNAltarLG3B,BR34LG3B,TAND495LG3B,SalKatLG3B,LMPGPILG3B,consensus2004SSRLG3B,",
+             "Joppa10LG3B,ACLG3B,Consensus2012TAGLG3B1,Consensus2012TAGLG3B2,",
+             "Consensus2014BMCLG3B,CWLG3B,EBLG3B,IALG3B1,IALG3B2,IALG3B3,LPenawawaLG3B,TT105LG3B,BMWLG3B",sep = "")
+write(header,file = "LG3B.int.csv")
+write.table(LG3B.int[[1]],  file="LG3B.int.csv",append = TRUE,sep = ",")
+
+LG4A=list(RIumLG4A, RP883LG4A, RP979LG4A, RP336LG4A, RP696LG4A, BP025LG4A, DP527LG4A, LP749LG4A,
+          LDNAltarLG4A,BR34LG4A,TAND495LG4A,SalKatLG4A,LMPGPILG4A,consensus2004SSRLG4A,
+          Joppa10LG4A,ACLG4A1,ACLG4A2,Consensus2012TAGLG4A,Consensus2014BMCLG4A,
+          CWLG4A,EBLG4A1,EBLG4A2,EBLG4A3,IALG4A1,IALG4A2,LPenawawaLG4A,TT105LG4A,BMWLG4A)
+LG4A.int=LPmerge(LG4A, max.interval=1:3)
+header=paste(",,,RIumLG4A, RP883LG4A, RP979LG4A, RP336LG4A, RP696LG4A, BP025LG4A, DP527LG4A, LP749LG4A,",
+             "LDNAltarLG4A,BR34LG4A,TAND495LG4A,SalKatLG4A,LMPGPILG4A,consensus2004SSRLG4A,",
+             "Joppa10LG4A,ACLG4A1,ACLG4A2,Consensus2012TAGLG4A,Consensus2014BMCLG4A,",
+             "CWLG4A,EBLG4A1,EBLG4A2,EBLG4A3,IALG4A1,IALG4A2,LPenawawaLG4A,TT105LG4A,,BMWLG4A",sep = "")
+write(header,file = "LG4A.int.csv")
+write.table(LG4A.int[[1]],  file="LG4A.int.csv",append = TRUE,sep = ",")
+
+LG4B=list(RIumLG4B, RP883LG4B, RP979LG4B, RP336LG4B, RP696LG4B, BP025LG4B, DP527LG4B, LP749LG4B,
+          LDNAltarLG4B,BR34LG4B,TAND495LG4B,SalKatLG4B,LMPGPILG4B,consensus2004SSRLG4B,
+          Joppa10LG4B,ACLG4B,Consensus2012TAGLG4B1,Consensus2012TAGLG4B2,Consensus2014BMCLG4B,
+          CWLG4B,EBLG4B1,EBLG4B2,EBLG4B3,IALG4B1,IALG4B2,LPenawawaLG4B,BMWLG4B)
+LG4B.int=LPmerge(LG4B, max.interval=1:3)
+header=paste(",,,RIumLG4B, RP883LG4B, RP979LG4B, RP336LG4B, RP696LG4B, BP025LG4B, DP527LG4B, LP749LG4B,",
+             "LDNAltarLG4B,BR34LG4B,TAND495LG4B,SalKatLG4B,LMPGPILG4B,consensus2004SSRLG4B,",
+             "Joppa10LG4B,ACLG4B,Consensus2012TAGLG4B1,Consensus2012TAGLG4B2,Consensus2014BMCLG4B,",
+             "CWLG4B,EBLG4B1,EBLG4B2,EBLG4B3,IALG4B1,IALG4B2,LPenawawaLG4B,,BMWLG4B",sep = "")
+write(header,file = "LG4B.int.csv")
+write.table(LG4B.int[[1]],  file="LG4B.int.csv",append = TRUE,sep = ",")
+
+LG5A=list(RIumLG5A, RP883LG5A, RP979LG5A, RP336LG5A, RP696LG5A, BP025LG5A, DP527LG5A, LP749LG5A,
+          LDNAltarLG5A,BR34LG5A,TAND495LG5A,SalKatLG5A,LMPGPILG5A,consensus2004SSRLG5A,
+          Joppa10LG5A,ACLG5A,Consensus2012TAGLG5A,Consensus2012TAGLG5A,Consensus2014BMCLG5A,
+          CWLG5A,EBLG5A1,EBLG5A2,EBLG5A3,EBLG5A4,IALG5A1,IALG5A2,LPenawawaLG5A,TT105LG5A,BMWLG5A)
+LG5A.int=LPmerge(LG5A, max.interval=1:3)
+header=paste(",,,RIumLG5A, RP883LG5A, RP979LG5A, RP336LG5A, RP696LG5A, BP025LG5A, DP527LG5A, LP749LG5A,",
+             "LDNAltarLG5A,BR34LG5A,TAND495LG5A,SalKatLG5A,LMPGPILG5A,consensus2004SSRLG5A,",
+             "Joppa10LG5A,ACLG5A,Consensus2012TAGLG5A,Consensus2012TAGLG5A,Consensus2014BMCLG5A,",
+             "CWLG5A,EBLG5A1,EBLG5A2,EBLG5A3,EBLG5A4,IALG5A1,IALG5A2,LPenawawaLG5A,TT105LG5A,BMWLG5A",sep = "")
+write(header, file="LG5A.int.csv")
+write.table(LG5A.int[[1]], file="LG5A.int.csv",append = TRUE,sep= ",")
+
+LG5B=list(RIumLG5B, RP883LG5B, RP979LG5B, RP336LG5B, RP696LG5B, BP025LG5B, DP527LG5B, LP749LG5B,
+          LDNAltarLG5B,BR34LG5B,TAND495LG5B,SalKatLG5B,LMPGPILG5B,consensus2004SSRLG5B,
+          Joppa10LG5B,ACLG5B,Consensus2012TAGLG5B1,Consensus2012TAGLG5B2,Consensus2012TAGLG5B3,Consensus2014BMCLG5B,
+          CWLG5B,EBLG5B,IALG5B1,IALG5B2,LPenawawaLG5B,TT105LG5B,BMWLG5B)
+LG5B.int=LPmerge(LG5B, max.interval=1:5)
+header=paste(",,,RIumLG5B, RP883LG5B, RP979LG5B, RP336LG5B, RP696LG5B, BP025LG5B, DP527LG5B, LP749LG5B,",
+             " LDNAltarLG5B,BR34LG5B,TAND495LG5B,SalKatLG5B,LMPGPILG5B,consensus2004SSRLG5B,",
+             "Joppa10LG5B,ACLG5B,Consensus2012TAGLG5B1,Consensus2012TAGLG5B2,Consensus2012TAGLG5B3,Consensus2014BMCLG5B,",
+             " CWLG5B,EBLG5B,IALG5B1,IALG5B2,LPenawawaLG5B,TT105LG5B,BMWLG5B",sep = "")
+write(header, file="LG5B.int.csv")
+write.table(LG5B.int[[1]], file="LG5B.int.csv",append = TRUE,sep= ",")
+
+LG6A=list(RIumLG6A, RP883LG6A, RP979LG6A, RP336LG6A, RP696LG6A, BP025LG6A, DP527LG6A, LP749LG6A,
+          LDNAltarLG6A,BR34LG6A,TAND495LG6A,SalKatLG6A,LMPGPILG6A,consensus2004SSRLG6A,
+          Joppa10LG6A,ACLG6A,Consensus2012TAGLG6A,Consensus2014BMCLG6A,
+          CWLG6A,EBLG6A1,EBLG6A2,IALG6A,LPenawawaLG6A,TT105LG6A,BMWLG6A)
+LG6A.int=LPmerge(LG6A, max.interval=1:6)
+header=paste(",,,RIumLG6A, RP883LG6A, RP979LG6A, RP336LG6A, RP696LG6A, BP025LG6A, DP527LG6A, LP749LG6A,",
+             "LDNAltarLG6A,BR34LG6A,TAND495LG6A,SalKatLG6A,LMPGPILG6A,consensus2004SSRLG6A,",
+             "Joppa10LG6A,ACLG6A,Consensus2012TAGLG6A,Consensus2014BMCLG6A,",
+             "CWLG6A,EBLG6A1,EBLG6A2,IALG6A,LPenawawaLG6A,TT105LG6A,BMWLG6A",sep = "")
+write(header, file="LG6A.int.csv")
+write.table(LG6A.int[[1]], file="LG6A.int.csv",append = TRUE,sep= ",")
+
+LG6B=list(RIumLG6B, RP883LG6B, RP979LG6B, RP336LG6B, RP696LG6B, BP025LG6B, DP527LG6B, LP749LG6B,
+          LDNAltarLG6B,BR34LG6B,TAND495LG6B,SalKatLG6B,LMPGPILG6B,consensus2004SSRLG6B,
+          Joppa10LG6B,ACLG6B1,ACLG6B2,Consensus2012TAGLG6B,Consensus2014BMCLG6B,
+          CWLG6B,EBLG6B1,EBLG6B2,IALG6B1,IALG6B2,LPenawawaLG6B,TT105LG6B,BMWLG6B)
+LG6B.int=LPmerge(LG6B, max.interval=1:6)
+header=paste(",,,RIumLG6B, RP883LG6B, RP979LG6B, RP336LG6B, RP696LG6B, BP025LG6B, DP527LG6B, LP749LG6B,",
+             "LDNAltarLG6B,BR34LG6B,TAND495LG6B,SalKatLG6B,LMPGPILG6B,consensus2004SSRLG6B,",
+             "Joppa10LG6B,ACLG6B1,ACLG6B2,Consensus2012TAGLG6B,Consensus2014BMCLG6B,",
+             "CWLG6B,EBLG6B1,EBLG6B2,IALG6B1,IALG6B2,LPenawawaLG6B,TT105LG6B,BMWLG6B",sep = "")
+write(header, file="LG6B.int.csv")
+write.table(LG6B.int[[1]], file="LG6B.int.csv",append = TRUE,sep= ",")
+
+LG7A=list(RIumLG7A, RP883LG7A, RP979LG7A, RP336LG7A, RP696LG7A, BP025LG7A, DP527LG7A, LP749LG7A,
+          LDNAltarLG7A,BR34LG7A,TAND495LG7A,SalKatLG7A,LMPGPILG7A,consensus2004SSRLG7A,
+          Joppa10LG7A,ACLG7A1,ACLG7A2,
+          Consensus2012TAGLG7A1,Consensus2012TAGLG7A2,Consensus2012TAGLG7A3,Consensus2014BMCLG7A,
+          CWLG7A1,CWLG7A2,
+          EBLG7A1,EBLG7A2,EBLG7A3,
+          IALG7A1,IALG7A2,LPenawawaLG7A,TT105LG7A,BMWLG7A)
+LG7A.int=LPmerge(LG7A, max.interval=1:6)
+LG7A.int[[1]][1:20,]
+header=paste(",,,RIumLG7A, RP883LG7A, RP979LG7A, RP336LG7A, RP696LG7A, BP025LG7A, DP527LG7A, LP749LG7A,",
+             "LDNAltarLG7A,BR34LG7A,TAND495LG7A,SalKatLG7A,LMPGPILG7A,consensus2004SSRLG7A,",
+             "Joppa10LG7A,ACLG7A1,ACLG7A2,",
+             "Consensus2012TAGLG7A1,Consensus2012TAGLG7A2,Consensus2012TAGLG7A3,Consensus2014BMCLG7A,",
+             "CWLG7A1,CWLG7A2,",
+             "EBLG7A1,EBLG7A2,EBLG7A3,",
+             "IALG7A1,IALG7A2,LPenawawaLG7A,TT105LG7A,BMWLG7A",sep = "")
+write(header, file="LG7A.int.csv")
+write.table(LG7A.int[[1]], file="LG7A.int.csv",append = TRUE,sep = ",")
+
+LG7B=list(RIumLG7B, RP883LG7B, RP979LG7B, RP336LG7B, RP696LG7B, BP025LG7B, DP527LG7B, LP749LG7B,
+          LDNAltarLG7B,BR34LG7B,TAND495LG7B,SalKatLG7B,LMPGPILG7B,consensus2004SSRLG7B,
+          Joppa10LG7B,ACLG7B,Consensus2012TAGLG7B,Consensus2014BMCLG7B,
+          CWLG7B,EBLG7B1,EBLG7B2,EBLG7B3,IALG7B1,IALG7B2,LPenawawaLG7B,TT105LG7B,BMWLG7B)
+LG7B.int=LPmerge(LG7B, max.interval=1:3)
+LG7B.int[[1]][1:20,]
+header=paste(",,,RIumLG7B, RP883LG7B, RP979LG7B, RP336LG7B, RP696LG7B, BP025LG7B, DP527LG7B, LP749LG7B,",
+             "LDNAltarLG7B,BR34LG7B,TAND495LG7B,SalKatLG7B,LMPGPILG7B,consensus2004SSRLG7B,Joppa10LG7B,",
+             "ACLG7B,Consensus2012TAGLG7B,Consensus2014BMCLG7B,CWLG7B,EBLG7B1,EBLG7B2,EBLG7B3,IALG7B1,IALG7B2,",
+             "LPenawawaLG7B,TT105LG7B,BMWLG7B",sep = "")
+write(header, file="LG7B.int.csv")
+write.table(LG7B.int[[1]], file="LG7B.int.csv",append = TRUE,sep = ",")
+
+####D genome markers distribute sparse
+LG1D=list(BR34LG1D,TAND495LG1D,SalKatLG1D,LMPGPILG1D,consensus2004SSRLG1D,
+          ACLG1D,CWLG1D,EBLG1D,IALG1D,LPenawawaLG1D,TT105LG1D,BMWLG1D)
+LG1D.int=LPmerge(LG1D, max.interval=1:6)
+header=paste(",,,BR34LG1D,TAND495LG1D,SalKatLG1D,LMPGPILG1D,consensus2004SSRLG1D,",
+             "ACLG1D,CWLG1D,EBLG1D,IALG1D,LPenawawaLG1D,TT105LG1D,BMWLG1D",sep = "")
+write(header, file="LG1D.int.csv")
+write.table(LG1D.int[[1]], file="LG1D.int.csv",append = TRUE,sep = ",")
+
+LG2D=list(BR34LG2D,TAND495LG2D,SalKatLG2D,LMPGPILG2D,consensus2004SSRLG2D,
+          ACLG2D1,ACLG2D2,CWLG2D1,CWLG2D2,EBLG2D1,EBLG2D2,IALG2D1,IALG2D2,LPenawawaLG2D,TT105LG2D,BMWLG2D)
+LG2D.int=LPmerge(LG2D, max.interval=1:3)
+header=paste(",,,BR34LG2D,TAND495LG2D,SalKatLG2D,LMPGPILG2D,consensus2004SSRLG2D,",
+             "ACLG2D1,ACLG2D2,CWLG2D1,CWLG2D2,EBLG2D1,EBLG2D2,IALG2D1,IALG2D2,LPenawawaLG2D,TT105LG2D,BMWLG2D",sep = "")
+write(header, file="LG2D.int.csv")
+write.table(LG2D.int[[2]], file="LG2D.int.csv",append = TRUE,sep = ",")
+
+
+LG3D=list(TAND495LG3D,SalKatLG3D,LMPGPILG3D,consensus2004SSRLG3D,
+          CWLG3D1,CWLG3D2,EBLG3D1,EBLG3D2,IALG3D,LPenawawaLG3D,TT105LG3D,BMWLG3D)
+LG3D.int=LPmerge(LG3D, max.interval=1:2)
+header=paste(",,,TAND495LG3D,SalKatLG3D,LMPGPILG3D,consensus2004SSRLG3D,",
+             "CWLG3D1,CWLG3D2,EBLG3D1,EBLG3D2,IALG3D,LPenawawaLG3D,TT105LG3D,BMWLG3D",sep = "")
+write(header, file="LG3D.int.csv")
+write.table(LG3D.int[[1]], file="LG3D.int.csv",append = TRUE,sep = ",")
+
+LG4D=list(BR34LG4D,TAND495LG4D,SalKatLG4D,LMPGPILG4D,consensus2004SSRLG4D,
+          EBLG4D1,EBLG4D2,IALG4D,LPenawawaLG4D,TT105LG4D,BMWLG4D)
+LG4D.int=LPmerge(LG4D, max.interval=1:4)
+header=paste(",,,BR34LG4D,TAND495LG4D,SalKatLG4D,LMPGPILG4D,consensus2004SSRLG4D,",
+             " ACLG4D,CWLG4D,EBLG4D1,EBLG4D2,IALG4D,LPenawawaLG4D,TT105LG4D,BMWLG4D",sep = "")
+write(header, file="LG4D.int.csv")
+write.table(LG4D.int[[1]], file="LG4D.int.csv",append = TRUE,sep = ",")
+
+LG5D=list(BR34LG5D,TAND495LG5D,SalKatLG5D,LMPGPILG5D,consensus2004SSRLG5D,
+          ACLG5D,EBLG5D1,EBLG5D2,LPenawawaLG5D,TT105LG5D,BMWLG5D)
+LG5D.int=LPmerge(LG5D, max.interval=1:2)
+header=paste(",,,BR34LG5D,TAND495LG5D,SalKatLG5D,LMPGPILG5D,consensus2004SSRLG5D,",
+             "ACLG5D,EBLG5D1,EBLG5D2,IALG5D,LPenawawaLG5D,BMWLG5D",sep = "")
+write(header, file="LG5D.int.csv")
+write.table(LG5D.int[[1]], file="LG5D.int.csv",append = TRUE,sep = ",")
+
+LG6D=list(BR34LG6D,TAND495LG6D,SalKatLG6D,LMPGPILG6D,consensus2004SSRLG6D,
+          ACLG6D1,ACLG6D2,CWLG6D,EBLG6D1,EBLG6D2,LPenawawaLG6D,TT105LG6D,BMWLG6D)
+LG6D.int=LPmerge(LG6D, max.interval=1:2)
+header=paste(",,,BR34LG6D,TAND495LG6D,SalKatLG6D,LMPGPILG6D,consensus2004SSRLG6D,",
+             "ACLG6D1,ACLG6D2,CWLG6D,EBLG6D1,EBLG6D2,LPenawawaLG6D,TT105LG6D,BMWLG6D",sep = "")
+write(header, file="LG6D.int.csv")
+write.table(LG6D.int[[1]], file="LG6D.int.csv",append = TRUE,sep = ",")
+
+LG7D=list(BR34LG7D,TAND495LG7D,SalKatLG7D,LMPGPILG7D,consensus2004SSRLG7D,
+          ACLG7D,CWLG7D,EBLG7D1,EBLG7D2,EBLG7D3,IALG7D,LPenawawaLG7D,TT105LG7D,BMWLG7D)
+LG7D.int=LPmerge(LG7D, max.interval=1:2)
+header=paste(",,,BR34LG7D,TAND495LG7D,SalKatLG7D,LMPGPILG7D,consensus2004SSRLG7D,",
+             "ACLG7D,CWLG7D,EBLG7D1,EBLG7D2,EBLG7D3,IALG7D,LPenawawaLG7D,TT105LG7D,BMWLG7D",sep = "")
+write(header, file="LG7D.int.csv")
+write.table(LG7D.int[[1]], file="LG7D.int.csv",append = TRUE,sep = ",")
+
+
+
+###########################
+#end diverting
+sink()
+
+
+#Rename colname. Originally, colnames are X1, X2, etc.
+
+# LG2A=list(RIumLG2A, RP883LG2A, RP979LG2A, RP336LG2A, RP696LG2A, BP025LG2A, DP527LG2A1,DP527LG2A2, LP749LG2A,
+#           LDNAltarLG2A,BR34LG2A,TAND495LG2A,SalKatLG2A,LMPGPILG2A,consensus2004SSRLG2A,consensus2008DarTLG2A)
+# LG2B=list(RIumLG2B, RP883LG2B, RP979LG2B, RP336LG2B, RP696LG2B1, RP696LG2B2, BP025LG2B, DP527LG2B, LP749LG2B,
+#           LDNAltarLG2B,BR34LG2B,TAND495LG2B,SalKatLG2B,LMPGPILG2B,consensus2004SSRLG2B,consensus2008DarTLG2B)
+# LG3A=list(RIumLG3A, RP883LG3A, RP979LG3A, RP336LG3A, RP696LG3A, BP025LG3A, DP527LG3A, LP749LG3A,
+#           LDNAltarLG3A,BR34LG3A,TAND495LG3A,SalKatLG3A,LMPGPILG3A,consensus2004SSRLG3A,consensus2008DarTLG3A)
+
+
+chr1A=cbind("chr"=rep("1A",nrow(LG1A.int[[6]])),LG1A.int[[6]])
+#chr2A=cbind("chr"=rep("2A",nrow(LG2A.int[[2]])),LG2A.int[[2]][,-8])# extra columns in 2A&2B
+chr2B=cbind("chr"=rep("2B",nrow(LG2B.int[[3]])),LG2B.int[[3]][,-6])
+
+colnames(chr2B)=colnames(chr1A)
+#write a final consensus map
+finalMap=rbind(cbind("chr"=rep("1A",nrow(LG1A.int[[6]])),LG1A.int[[6]]),
+               cbind("chr"=rep("1B",nrow(LG1B.int[[4]])),LG1B.int[[4]]),
+               cbind("chr"=rep("2A",nrow(LG2A.int[[2]])),LG2A.int[[2]]),
+               chr2B,
+               cbind("chr"=rep("3A",nrow(LG3A.int[[6]])),LG3A.int[[6]]),
+               cbind("chr"=rep("3B",nrow(LG3B.int[[2]])),LG3B.int[[2]]),
+               cbind("chr"=rep("4A",nrow(LG4A.int[[2]])),LG4A.int[[2]]),
+               cbind("chr"=rep("4B",nrow(LG4B.int[[5]])),LG4B.int[[5]]),
+               cbind("chr"=rep("5A",nrow(LG5A.int[[6]])),LG5A.int[[6]]),
+               cbind("chr"=rep("5B",nrow(LG5B.int[[6]])),LG5B.int[[6]]),
+               cbind("chr"=rep("6A",nrow(LG6A.int[[6]])),LG6A.int[[6]]),
+               cbind("chr"=rep("6B",nrow(LG6B.int[[7]])),LG6B.int[[7]]), 
+               cbind("chr"=rep("7A",nrow(LG7A.int[[4]])),LG7A.int[[4]]),
+               cbind("chr"=rep("7B",nrow(LG7B.int[[4]])),LG7B.int[[4]]))
+
+colnames(finalMap)=c("chr","marker","pos","RIum","RP883","RP979","RP336","RP696","BP025","DP527","LP749",
+                     "LDNxAltar","BR34Gradin","TAxND495","SalKat","LMPGxPI","consensus2004","consensus2008","Joppa10")
+write.csv(finalMap,file = "final_consensus_map_AABB_16maps.csv")
+
+#D genome
+# LG2D=list(BR34LG2D,TAND495LG2D,SalKatLG2D,LMPGPILG2D,consensus2004SSRLG2D)
+# LG3D=list(TAND495LG3D,SalKatLG3D,LMPGPILG3D,consensus2004SSRLG3D)
+
+LG3D.int[[7]]=cbind(LG3D.int[[7]],rep(NA,nrow(LG3D.int[[7]])))
+LG3D.int[[7]]=LG3D.int[[7]][,c(1,2,7,3,4,5,6)]
+colnames(LG3D.int[[7]])=colnames(LG1D.int[[3]])
+
+finalDgenomeMap=rbind(cbind("chr"=rep("1D",nrow(LG1D.int[[3]])),LG1D.int[[3]]),
+                      cbind("chr"=rep("2D",nrow(LG2D.int[[5]])),LG2D.int[[5]]),
+                      cbind("chr"=rep("3D",nrow(LG3D.int[[7]])),LG3D.int[[7]]),
+                      cbind("chr"=rep("4D",nrow(LG4D.int[[3]])),LG4D.int[[3]]),
+                      cbind("chr"=rep("5D",nrow(LG5D.int[[5]])),LG5D.int[[5]]),
+                      cbind("chr"=rep("6D",nrow(LG6D.int[[3]])),LG6D.int[[3]]),
+                      cbind("chr"=rep("7D",nrow(LG7D.int[[6]])),LG7D.int[[6]]))
+
+colnames(finalDgenomeMap)=c("chr","marker","pos","BR34Gradin","TAxND495","SalKat","LMPGxPI","consensus2004SSR")
+
+write.csv(finalDgenomeMap,file="final_consensus_map_Dgenome_5_maps.csv")
+################
+#Evaluate the constructed consensus map
+consensusMap=read.csv("../Consensus_July30.csv",header = T,stringsAsFactors = F,sep = ",")
+consensusMap[1:5,1:3]
+
+i90kMap=read.csv("../i90k_bread_wheat_consensus_map.csv",header = T,na.strings = "NA",stringsAsFactors = F)
+i90kMap[1:5,]
+
+
+correlationContainer=c()
+for(chromosome in c("1A","1B","2A","2B","3A","3B","4A","4B","5A","5B","6A","6B","7A","7B")){
+  consensusMap[consensusMap$chr ==chromosome,]$marker
+  i90kMap[i90kMap$Chr==chromosome,]$SNP_.id
+  commomMarker=intersect(consensusMap[consensusMap$chr ==chromosome,]$marker,i90kMap[i90kMap$Chr==chromosome,]$SNP_.id)
+  test1=consensusMap[consensusMap$chr ==chromosome,]
+  rownames(test1)=test1$marker
+  test2=i90kMap[i90kMap$Chr==chromosome,]
+  rownames(test2)=test2$SNP_.id
+  rank(test1[commomMarker,]$pos)
+  rank(test2[commomMarker,]$cM)
+  correlationContainer=rbind(correlationContainer,c(chromosome,cor(rank(test1[commomMarker,]$pos),rank(test2[commomMarker,]$cM))))
+}
+
+#correlationContainerJan11=correlationContainer
+correlationContainer
+
+#####
+tetraploid2014Consensus = read.csv("../tetraploid_Maccaferri2014.csv",header = T,na.strings = "NA",stringsAsFactors = F)
+correlationContainer=c()
+for(chromosome in c("1A","1B","2A","2B","3A","3B","4A","4B","5A","5B","6A","6B","7A","7B")){
+  consensusMap[consensusMap$chr ==chromosome,]$marker
+  tetraploid2014Consensus[tetraploid2014Consensus$Chr==chromosome,]$SNP_.id
+  commomMarker=intersect(consensusMap[consensusMap$chr ==chromosome,]$marker,tetraploid2014Consensus[tetraploid2014Consensus$Chr==chromosome,]$SNP_.id)
+  test1=consensusMap[consensusMap$chr ==chromosome,]
+  rownames(test1)=test1$marker
+  test2=tetraploid2014Consensus[tetraploid2014Consensus$Chr==chromosome,]
+  rownames(test2)=test2$SNP_.id
+  rank(test1[commomMarker,]$pos)
+  rank(test2[commomMarker,]$cM)
+  correlationContainer=rbind(correlationContainer,c(chromosome,cor(rank(test1[commomMarker,]$pos),rank(test2[commomMarker,]$cM))))
+}
+
+#correlationContainerJan11=correlationContainer
+correlationContainer
+
